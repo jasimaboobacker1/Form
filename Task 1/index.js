@@ -21,10 +21,16 @@ function validateForm() {
     }else if (!password.trim()) {
         alert('Password is required');
         return false;
+    }else if (password.trim().length < 5) {
+        alert('Password must contain 5 digit');
+        return false;
     }else if (!phoneNumber.trim()) {
         alert('Phone Number is required');
         return false;
-    }else if (!city.trim()) {
+    } else if (phoneNumber.trim().length !== 10 || isNaN(phoneNumber.trim())) {
+        alert('Phone Number must be 10 digits');
+        return false;
+    } else if (!city.trim()) {
         alert('City is required');
         return false;
     }
